@@ -33,4 +33,23 @@ public class MovieService {
     public List<Movie> findAllMovies() {
         return movieRepository.findAllMovies();
     }
+
+    public String addMovieDirectorPair(String directorname, String moviename) {
+        movieRepository.addMovieDirectorPair(directorname,moviename);
+        return "added succesfully";
+    }
+
+    public List<String> getMoviesByDirectorName(String name){
+       return movieRepository.getMoviesByDirectorName(name);
+    }
+
+    public String deleteDirectorByName(String name) {
+        movieRepository.deleteDirectorByName(name);
+        return "Delete succesfully";
+    }
+
+    public String deleteAllDirectors() {
+        movieRepository.deleteAllDirectors();
+        return "Deleted succesfully";
+    }
 }
